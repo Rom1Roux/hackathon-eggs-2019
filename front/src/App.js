@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import FinalGame from './Component/FinalGame';
+import FinalGame from './Component/FinalGame';
 import './CSS/App.css';
 import SelectHeroes from './Component/SelectHeroes';
 import Start from './Component/Start'
