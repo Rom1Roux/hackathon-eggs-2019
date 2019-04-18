@@ -26,24 +26,26 @@ export default class SelectHeroes extends Component {
 
   validation = () => {
     const { pseudo, heroes } = this.state;
-    const hero = { heroId: heroes.id, pseudo: pseudo}
-    console.log(hero);
-    const option = {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      }),
-      body: JSON.stringify(hero)
-    }
-    fetch('/back/saveHeroes', option)
-    .then(res => res.json())
-    .then(res => {
-      if(res.callback){
-        this.props.isConnected(pseudo, hero.heroId);
-      } else {
-        alert('Le pseudo est déjà utilisé')
+    if(pseudo !== null || heroes !== null){
+      const hero = { heroId: heroes.id, pseudo: pseudo}
+      console.log(hero);
+      const option = {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        }),
+        body: JSON.stringify(hero)
       }
-    })
+      fetch('/back/saveHeroes', option)
+      .then(res => res.json())
+      .then(res => {
+        if(res.callback){
+          this.props.isConnected(pseudo, hero.heroId);
+        } else {
+          alert('Le pseudo est déjà utilisé')
+        }
+      })
+    }
   }
 
   render() {

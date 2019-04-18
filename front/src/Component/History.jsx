@@ -11,11 +11,6 @@ export default class History extends Component {
     }
   }
 
-
-  // componentDidMount() {
-  //   this.scenario();
-  // }
-
   next = (param) => {
     const next = this.state.format.answerChoice[param].nextFunction;
     this.setState({ format: this.choice[next]() });
@@ -27,9 +22,9 @@ export default class History extends Component {
       <div>
         <p>{histoire}</p>
         <Button.Group vertical>
-        <div className='buttonChoice'>
-          <Button onClick={() => this.next('one')} color='red'>{answerChoice.one.text}</Button>
-        </div>
+          <div className='buttonChoice'>
+            <Button onClick={() => this.next('one')} color='red'>{answerChoice.one.text}</Button>
+          </div>
           <div className='buttonChoice'>
             <Button onClick={() => this.next('two')} color='red'>{answerChoice.two.text}</Button>
           </div>

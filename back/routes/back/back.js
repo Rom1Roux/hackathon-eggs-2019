@@ -29,7 +29,7 @@ router.get('/selectHeroes', (req, res) => {
 router.post('/saveHeroes', (req, res) => {
   const data = req.body;
   console.log(data)
-  connection.query(`INSERT INTO account (pseudo, hero) VALUES ("${data.pseudo}", "${data.heroInfo}")`, (error, result) => {
+  connection.query(`INSERT INTO account (pseudo, hero) VALUES ("${data.pseudo}", "${data.heroId}")`, (error, result) => {
     if(error){
       console.log(error)
       res.json({ callback: false });

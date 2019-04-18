@@ -17,8 +17,10 @@ export default class Start extends Component {
       <div>
         {this.state.start !== true ?
           <div>
-            <p>GROS PAVÉ DE TEXTE QUI EXPLIQUE L'HISTOIRE</p>
-            <Button className='buttonChoice' onClick={this.startHistory}>GOOO !</Button>
+            <p>Bravo ! vous avez été sélectionné parmis les derniers des loosers... <br />
+            Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête.</p>
+            <Button color='red' className='buttonChoice' onClick={this.startHistory}>D'accord</Button>
+            <Button color='red' className='buttonChoice' onClick={() => alert('Tu es encore pire que ce que j\'imaginais')}>Je ne peux pas j'ai piscine</Button>
           </div>
           :
           <History heroId={this.props.heroId}/>
