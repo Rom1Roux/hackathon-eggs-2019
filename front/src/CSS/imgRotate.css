@@ -1,7 +1,13 @@
 .eggsFinal, .eggsFinal img {
-  animation: eggsFinal-spin infinite 20s linear;
-  height: 50px;
-  pointer-events: none;
+  animation: eggsFinal-spin infinite 10s linear;
+  height: 60px;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.eggsFinal button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 @keyframes eggsFinal-spin {
