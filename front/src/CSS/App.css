@@ -20,3 +20,12 @@
 .buttonChoice{
   margin-bottom: 5%;
 }
+
+.flextest{
+  display: flex;
+  margin-top: 10%;
+}
+
+.cardChoose {
+  min-height: 1000px;
+}

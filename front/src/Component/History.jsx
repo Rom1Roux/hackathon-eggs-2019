@@ -23,9 +23,6 @@ export default class History extends Component {
 
   render() {
     const { histoire, answerChoice } = this.state.format;
-    console.log('state', this.state.format);
-    console.log('answer', this.state.format.answerChoice)
-    console.log('one', this.state.format.answerChoice.one.text)
     return (
       <div>
         <p>{histoire}</p>

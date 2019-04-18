@@ -4,13 +4,14 @@
     "description": "eggs ass per",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "nodemon index.js"
     },
     "author": "Karyl && Rom1",
     "dependencies": {
         "body-parser": "^1.18.2",
         "express": "^4.16.3",
         "morgan": "^1.9.0",
-        "mysql": "^2.17.0"
+        "mysql": "^2.17.0",
+        "node-fetch": "^2.3.0"
     }
 }
