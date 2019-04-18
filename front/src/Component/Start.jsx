@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
-import History from './History'
+import History from './History';
+import Say from 'react-say';
 
 export default class Start extends Component {
 
@@ -17,6 +18,8 @@ export default class Start extends Component {
       <div>
         {this.state.start !== true ?
           <div>
+            <Say speak="Bravo ! vous avez été sélectionné parmis les derniers des loosers...
+            Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête." />
             <p>Bravo ! vous avez été sélectionné parmis les derniers des loosers... <br />
             Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête.</p>
             <Button color='red' className='buttonChoice' onClick={this.startHistory}>D'accord</Button>
