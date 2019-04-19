@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Icon, Card, Image, Button } from 'semantic-ui-react';
+import { Input, Icon, Card, Image, Button, Container } from 'semantic-ui-react';
 
 export default class SelectHeroes extends Component {
 
@@ -26,8 +26,8 @@ export default class SelectHeroes extends Component {
 
   validation = () => {
     const { pseudo, heroes } = this.state;
-    if(pseudo !== null || heroes !== null){
-      const hero = { heroId: heroes.id, pseudo: pseudo};
+    if (pseudo !== null || heroes !== null) {
+      const hero = { heroId: heroes.id, pseudo: pseudo };
       const option = {
         method: 'POST',
         headers: new Headers({
@@ -36,14 +36,14 @@ export default class SelectHeroes extends Component {
         body: JSON.stringify(hero)
       }
       fetch('/back/saveHeroes', option)
-      .then(res => res.json())
-      .then(res => {
-        if(res.callback){
-          this.props.isConnected(pseudo, hero.heroId);
-        } else {
-          alert('Le pseudo est déjà utilisé')
-        }
-      })
+        .then(res => res.json())
+        .then(res => {
+          if (res.callback) {
+            this.props.isConnected(pseudo, hero.heroId);
+          } else {
+            alert('Le pseudo est déjà utilisé')
+          }
+        })
     }
   }
 
@@ -51,26 +51,27 @@ export default class SelectHeroes extends Component {
     const { choose, pseudo } = this.state;
     return (
       <div>
-        <form>
-          <Input icon placeholder='Eggs Ass Perent'>
-            <input
-              type='text'
-              onChange={this.handleChangeInput}
-              required
-            />
-            <Icon name='play' />
-          </Input>
-        </form>
-        <div className='flextest'>
+          <form className='formInput'>
+            <Input icon placeholder='Eggs Ass Perent'>
+              <input
+                type='text'
+                onChange={this.handleChangeInput}
+                required
+              />
+              <Icon name='play' />
+            </Input>
+          </form>
 
-          {choose !== undefined ?
-            choose.map((elem, i) =>
-              <DisplayChoose key={i} desc={elem} pseudo={pseudo} callback={this.callback}/>
-            ) : ''}
+        <Container>
+          <Card.Group itemsPerRow="three">
+            {choose !== undefined ?
+              choose.map((elem, i) =>
+                <DisplayChoose key={i} desc={elem} pseudo={pseudo} callback={this.callback} />
+              ) : ''}
+          </Card.Group>
+        </Container>
 
-        </div>
-
-        <Button color='red' onClick={() => this.validation()}>Jouer !</Button>
+        <Button style={{marginTop: '10%'}} color='red' onClick={() => this.validation()}>Jouer !</Button>
 
       </div>
     );
@@ -98,23 +99,19 @@ export class DisplayChoose extends Component {
 
   render() {
     return (
-      <div>
-        <Card.Group itemsPerRow={1}>
-          <Card onClick={this.heoresSelected}>
-            <Image src={this.image} />
-            <Card.Content>
-              <Card.Header>{this.name}</Card.Header>
-              <Card.Meta>
-                <span className='date'>Gender : {this.gender}</span>
-              </Card.Meta>
-            </Card.Content>
-            <Card.Content extra>
-              <Icon name='user' />
-              {this.species}
-            </Card.Content>
-          </Card>
-        </Card.Group>
-      </div>
+      <Card onClick={this.heoresSelected}>
+        <Image src={this.image} />
+        <Card.Content>
+          <Card.Header>{this.name}</Card.Header>
+          <Card.Meta>
+            <span className='date'>Gender : {this.gender}</span>
+          </Card.Meta>
+        </Card.Content>
+        <Card.Content extra>
+          <Icon name='user' />
+          {this.species}
+        </Card.Content>
+      </Card>
     );
   }
 }
