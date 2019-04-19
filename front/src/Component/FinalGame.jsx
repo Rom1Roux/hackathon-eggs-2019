@@ -52,7 +52,7 @@ class FinalGame extends Component {
     const { eggs, score } = this.state;
     if(score >= 10){
       Swal.fire({
-        title: 'Félicitation, vous avez réussie à résoudre cette enquête, mais vous êtes quand même minable',
+        title: 'Félicitation, on vous offre un pass VIP pour l\'emission de Michel Drucker et toute notre gratitude... GROS LOOSER !!!',
         type: 'success'});
       this.props.restartGame();
     }
