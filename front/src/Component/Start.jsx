@@ -20,7 +20,7 @@ export default class Start extends Component {
           <div>
             <Say speak="Bravo ! vous avez été sélectionné parmis les derniers des loosers...
             Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête." />
-            <p>Bravo ! vous avez été sélectionné parmis les derniers des loosers... <br />
+            <p className='mobilePolicie'>Bravo ! vous avez été sélectionné parmis les derniers des loosers... <br />
             Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête.</p>
             <Button color='red' className='buttonChoice' onClick={this.startHistory}>D'accord</Button>
             <Button color='red' className='buttonChoice' onClick={() => alert('Tu es encore pire que ce que j\'imaginais')}>Je ne peux pas j'ai piscine</Button>

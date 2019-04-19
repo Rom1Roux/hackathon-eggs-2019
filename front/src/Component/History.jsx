@@ -14,7 +14,6 @@ export default class History extends Component {
 
   next = (param) => {
     const next = this.state.format.answerChoice[param].nextFunction;
-    console.log(this.state)
     this.setState({ format: this.choice[next]() });
   }
 
@@ -38,13 +37,14 @@ export default class History extends Component {
       body: JSON.stringify({ pseudo: this.props.player })
     }
     fetch('/back/delEggs', param)
-
   }
 
   render() {
     const { histoire, answerChoice } = this.state.format;
-    if (this.state.format.eggs === true) {
+    let oldState = true;
+    if (this.state.format.eggs === true && oldState === true) {
       this.getEggs();
+      oldState = false;
     } else {
       this.deleteEggs();
     }

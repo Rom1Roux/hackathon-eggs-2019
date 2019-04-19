@@ -19,22 +19,21 @@ class ChoiceScenario {
     }
     return res;
   }
-
   /****** Avions ******/
   scenarioAvion = () => {
     const res = {
-      histoire: 'Dans l\'avion, l\'hôtesse te demande de d\'attacher ta ceinture',
+      histoire: 'Dans l\'avion, l\'hôtesse vous demande d\'attacher votre ceinture',
       answerChoice: {
         one: {
-          text: 'Tu sautes',
+          text: 'Vous sautez',
           nextFunction: 'scenarioMortSaut',
         },
         two: {
-          text: 'Tu obéis',
+          text: 'Vous obéissez',
           nextFunction: 'scenarioObeis',
         },
         three: {
-          text: 'Tu lances Candy Crush sur ton téléphone',
+          text: 'Vous lancez Candy Crush sur votre téléphone',
           nextFunction: 'scenarioCandyCrush',
         },
       }
@@ -43,7 +42,7 @@ class ChoiceScenario {
   }
   scenarioMortSaut = () => {
     const res = {
-      histoire: 'Quand tu as ouvert la porte de secours, tu as provoqué le crash de l\'avion',
+      histoire: 'Quand vous avez ouvert la porte de secours, vous avez provoqué le crash de l\'avion',
       answerChoice: {
         one: {
           text: 'Perdu',
@@ -63,18 +62,18 @@ class ChoiceScenario {
   }
   scenarioObeis = () => {
     const res = {
-      histoire: 'Le voyage c\'est passé sans problème, tu attéris en Australie et tu rejoins Michel qui t\'amène sur les lieux de l\'enquête, après de longue heures de voiture, vous avez faim, vous vous arrêtez pour manger un bout.',
+      histoire: 'Le voyage c\'est passé sans problème, vous attérissez en Australie et vous rejoignez Michel qui vous amène sur les lieux de l\'enquête, après de longue heures de voiture, vous avez faim, vous vous arrêtez pour manger un bout.',
       answerChoice: {
         one: {
           text: 'Dans un Mcdonald',
           nextFunction: 'scenarioMcdonald',
         },
         two: {
-          text: 'Dans une poubelle', // oeuf +1
+          text: 'Dans une poubelle',
           nextFunction: 'scenarioPoubelle',
         },
         three: {
-          text: 'Le hérisson que Michel vient d\'écraser',
+          text: 'Du hérisson que Michel vient d\'écraser',
           nextFunction: 'scenarioHerisson',
         },
       }
@@ -103,11 +102,11 @@ class ChoiceScenario {
   }
   scenarioPoubelle = () => {
     const res = {
-      histoire: 'Vous êtes fait pour être un enquetteur !! Vous trouvez un oeuf de paques au fond de la poubelle ' ,
+      histoire: 'Vous êtes fait pour être un enquetteur !! Vous trouvez un oeuf de paques au fond de la poubelle.' ,
       answerChoice: {
         one: {
           text: 'Vous le prenez',
-          nextFunction: 'scenario1', // changer scénario
+          nextFunction: 'scenarioPoubelleOeuf', // changer scénario
         },
         two: {
           text: 'Vous êtes un looser',
@@ -115,16 +114,56 @@ class ChoiceScenario {
         },
         three: {
           text: 'Choissisez la première solution',
-          nextFunction: 'scenario1',
+          nextFunction: 'scenario1erSolution',
         },
       },
       eggs: true
     }
     return res;
   }
+  scenarioPoubelleOeuf = () => {
+    const res = {
+      histoire: '' ,
+      answerChoice: {
+        one: {
+          text: 'Perdu',
+          nextFunction: 'scenario1', 
+        },
+        two: {
+          text: 'Perdu',
+          nextFunction: 'scenario1',
+        },
+        three: {
+          text: 'Perdu',
+          nextFunction: 'scenario1',
+        },
+      },
+    }
+    return res;
+  }
+  scenario1erSolution = () => {
+    const res = {
+      histoire: 'Votre stupidité ne mérite même pas d\'être remarqué.' ,
+      answerChoice: {
+        one: {
+          text: 'Perdu',
+          nextFunction: 'scenario1', 
+        },
+        two: {
+          text: 'Perdu',
+          nextFunction: 'scenario1',
+        },
+        three: {
+          text: 'Perdu',
+          nextFunction: 'scenario1',
+        },
+      },
+    }
+    return res;
+  }
   scenarioCandyCrush = () => {
     const res = {
-      histoire: 'Bravo ! Tu as dépassé le niveau 1000 de Candy Crush ! Tu as enfin réussi un truc dans ta vie. Ce cher Michel t\'attend dans sa voiture pour aller sur les lieux de l\'enquête. Cependant, en sortant de l\'avion tu te prend le pied dans une marche et tu meurs.',
+      histoire: 'Bravo ! Vous avez dépassé le niveau 1000 de Candy Crush ! Vous avez enfin réussi un truc dans votre vie. Cependant, en sortant de l\'avion vous vous prennez le pied dans une marche et vous mourez.',
       answerChoice: {
         one: {
           text: 'Perdu',
