@@ -41,6 +41,11 @@ export default class History extends Component {
     fetch('/back/delEggs', param)
   }
 
+  restartGame = () => {
+    console.log('test')
+    this.setState({format : this.choice.scenario1(), bonusStage: false })
+  }
+
   render() {
     const { histoire, answerChoice, image } = this.state.format;
     let oldState = true;
@@ -58,7 +63,7 @@ export default class History extends Component {
         height: '640px',
         overflow: 'hidden'
       }}>
-      {this.state.format.bonusStage === true ? <FinalGame /> : 
+      {this.state.format.bonusStage === true ? <FinalGame restartGame={() => this.restartGame()}/> : 
         <Container>
           <p className='mobilePolicie'>{histoire}</p>
           <Say speak={histoire} />

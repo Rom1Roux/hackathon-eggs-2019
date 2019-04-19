@@ -17,14 +17,14 @@ class ChoiceScenario {
       answerChoice: {
         one: {
           text: '... en avions',
-          nextFunction: 'scenarioAvion', // L'avion crash
+          nextFunction: 'scenarioAvion',
         },
         two: {
           text: '... en bateau',
-          nextFunction: 'scenarioBateau', // un satellite détruit par l'inde écrase le bateau
+          nextFunction: 'scenarioBateau',
         },
         three: {
-          text: '... en vélo éléctrique aquatique',
+          text: '... en vélo aquatique',
           nextFunction: 'scenarioVelo',
         },
       }
@@ -138,6 +138,28 @@ class ChoiceScenario {
     }
     return res;
   }
+  scenarioHerisson= () => {
+    const res = {
+      histoire: 'Nous sommes désolé, vous venez de vous planter une aigille dans la gorge. Vous êtes ratraprié d\'urgence en France car vous faites une réaction hallucinogène.',
+      image: poubelle,
+      answerChoice: {
+        one: {
+          text: 'Tu es un looser',
+          nextFunction: 'scenario1', // changer scénario
+        },
+        two: {
+          text: 'Michel s\'inquiète pour vous',
+          nextFunction: 'scenario1',
+        },
+        three: {
+          text: 'Vous recommencez l\'enquête depuis le début',
+          nextFunction: 'scenario1',
+        },
+      },
+      eggs: true
+    }
+    return res;
+  }
   scenarioPoubelleOeuf = () => {
     const res = {
       histoire: 'Suite à votre découverte, vous décidez d\'enquêter dans les environs, quand soudains...' ,
@@ -217,7 +239,6 @@ class ChoiceScenario {
           nextFunction: 'scenarioFuite',
         },
       },
-      bonusStage: true
     }
     return res;
   }
@@ -238,6 +259,7 @@ class ChoiceScenario {
           nextFunction: '',
         },
       },
+      bonusStage: true
     }
     return res;
   }
@@ -305,18 +327,18 @@ class ChoiceScenario {
   }
   scenarioBateau = () => {
     const res = {
-      histoire: '',
+      histoire: 'Un astéroïde s\'écrase sur votre bateau, c\'est vraiment pas de chance',
       answerChoice: {
         one: {
-          text: '',
+          text: 'Perdu',
           nextFunction: 'scenario1',
         },
         two: {
-          text: '',
+          text: 'Perdu',
           nextFunction: 'scenario1',
         },
         three: {
-          text: '',
+          text: 'Perdu',
           nextFunction: 'scenario1',
         },
       }
@@ -325,19 +347,19 @@ class ChoiceScenario {
   }
   scenarioVelo = () => {
     const res = {
-      histoire: '',
+      histoire: 'il a fallu seulement 3 ans de voyage en mer avec cette engin pour arriver en australie et vous rejoignez Michel qui vous amène sur les lieux de l\'enquête, après de longue heures de voiture, vous avez faim, vous vous arrêtez pour manger un bout.',
       answerChoice: {
         one: {
-          text: '',
-          nextFunction: '',
+          text: 'Dans un Mcdonald',
+          nextFunction: 'scenarioMcdonald',
         },
         two: {
-          text: '',
-          nextFunction: '',
+          text: 'Dans une poubelle',
+          nextFunction: 'scenarioPoubelle',
         },
         three: {
-          text: '',
-          nextFunction: '',
+          text: 'Du hérisson que Michel vient d\'écraser',
+          nextFunction: 'scenarioHerisson',
         },
       }
     }

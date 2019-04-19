@@ -49,9 +49,13 @@ class FinalGame extends Component {
 
   render() {
     const { eggs, score } = this.state;
+    if(score >= 10){
+      alert('Félicitation, vous avez réussie à résoudre cette enquête, mais vous êtes quand même minable');
+      this.props.restartGame();
+    }
     return (
       <div>
-        <p>counter: {score} </p>
+        <h1 className='titleFinalGame'>Counter: {score} </h1>
         {eggs.map((ClickEggs, i) => {
           return (
             <div key={'eggs' + i} className="eggsFinal" style={{

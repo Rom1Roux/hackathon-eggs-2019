@@ -20,6 +20,12 @@
   height: 100%;
 }
 
+.titleFinalGame {
+  text-align: center;
+  color: white;
+  background-color: #44444460;
+}
+
 .footer {
   position: absolute;
   left: 0%;
@@ -40,10 +46,13 @@
 /* a réparer */
 
 .mobilePolicie {
+  padding-top: 5%;
+  padding-bottom: 5%;
   color: white;
   font-weight: bold;
+  font-size: 1.2rem;
   text-shadow: 2px 2px 2px black;
-  background: #44444498;
+  background-color: rgba(114, 46, 46, 0.600);
 }
 
 .App-header {
