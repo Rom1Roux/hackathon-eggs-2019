@@ -13,16 +13,15 @@ class App extends Component {
 
   isConnected = (nickname, hero) => {
     this.setState({ player: nickname, heroId: hero})
-    console.log(nickname, hero)
   }
 
   render() {
     return (
       <div className="App">
-      <h1>Escape Eggs</h1>
+      <h1 className='titleApp'>Escape Eggs</h1>
       {/* <FinalGame /> */}
       {this.state.player !== null ?
-        <Start heroId={this.state.heroId}/> :
+        <Start player={this.state.player} heroId={this.state.heroId}/> :
         <SelectHeroes isConnected={this.isConnected}/> 
       }
       </div>

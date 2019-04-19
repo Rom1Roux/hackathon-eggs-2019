@@ -1,5 +1,25 @@
+@media all and (max-width: 640px) {
+  body {
+    background: url('http://www.mobileswall.com/wp-content/uploads/2015/08/640-Dawn-in-Forest-l.jpg') no-repeat;
+  }
+}
+
 .App {
   text-align: center;
+}
+
+.titleApp {
+  margin: 10%;
+  text-decoration: underline;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+/* a réparer */
+.mobilePolicie {
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px black;
 }
 
 .App-header {
@@ -17,11 +37,11 @@
   color: #61dafb;
 }
 
-.buttonChoice{
+.buttonChoice {
   margin-bottom: 5%;
 }
 
-.flextest{
+.flextest {
   display: flex;
   margin-top: 10%;
 }

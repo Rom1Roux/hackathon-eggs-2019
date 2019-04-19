@@ -117,7 +117,8 @@ class ChoiceScenario {
           text: 'Choissisez la première solution',
           nextFunction: 'scenario1',
         },
-      }
+      },
+      eggs: true
     }
     return res;
   }

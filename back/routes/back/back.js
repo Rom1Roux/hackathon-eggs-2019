@@ -30,14 +30,28 @@ router.post('/saveHeroes', (req, res) => {
   const data = req.body;
   console.log(data)
   connection.query(`INSERT INTO account (pseudo, hero) VALUES ("${data.pseudo}", "${data.heroId}")`, (error, result) => {
-    if(error){
+    if (error) {
       console.log(error)
       res.json({ callback: false });
     } else {
       res.json({ callback: true });
     }
   })
-})
+});
+
+router.post('/newEggs', (req, res) => {
+  const pseudo = req.body.pseudo;
+  connection.query(`SELECT eggs FROM account WHERE pseudo="${pseudo}"`, (err, res) => {
+    var count = res[0].eggs;
+    connection.query(`UPDATE account SET eggs="${count + 1}" WHERE pseudo="${pseudo}"`);
+  });
+});
+
+router.post('/delEggs', (req, res) => {
+  const pseudo = req.body.pseudo;
+    connection.query(`UPDATE account SET eggs=${0} WHERE pseudo="${pseudo}"`);
+});
+
 
 // router.get('/test', (req, res) => {
 //   connection.query('SELECT hero FROM account WHERE id=10', (error, result) => {

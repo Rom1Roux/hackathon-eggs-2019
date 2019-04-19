@@ -27,8 +27,7 @@ export default class SelectHeroes extends Component {
   validation = () => {
     const { pseudo, heroes } = this.state;
     if(pseudo !== null || heroes !== null){
-      const hero = { heroId: heroes.id, pseudo: pseudo}
-      console.log(hero);
+      const hero = { heroId: heroes.id, pseudo: pseudo};
       const option = {
         method: 'POST',
         headers: new Headers({

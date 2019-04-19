@@ -26,7 +26,7 @@ export default class Start extends Component {
             <Button color='red' className='buttonChoice' onClick={() => alert('Tu es encore pire que ce que j\'imaginais')}>Je ne peux pas j'ai piscine</Button>
           </div>
           :
-          <History heroId={this.props.heroId}/>
+          <History player={this.props.player} heroId={this.props.heroId}/>
         }
       </div>
     );
