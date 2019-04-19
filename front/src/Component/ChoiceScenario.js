@@ -123,7 +123,27 @@ class ChoiceScenario {
   }
   scenarioPoubelleOeuf = () => {
     const res = {
-      histoire: '' ,
+      histoire: 'Suite à votre découverte, vous décidez d\'enquêter dans les environs, quand soudains...' ,
+      answerChoice: {
+        one: {
+          text: 'Vous tombez sur un ticket de loto gagnant !',
+          nextFunction: 'scenarioLoto', 
+        },
+        two: {
+          text: 'Rien du tout...',
+          nextFunction: 'scenarioRien',
+        },
+        three: {
+          text: 'Un ornithorynque sauvage agressif apparaît',
+          nextFunction: 'scenarioOrnithorynque',
+        },
+      },
+    }
+    return res;
+  }
+  scenarioLoto = () => {
+    const res = {
+      histoire: 'Vous abandonez Michel et vous foncez vers le premier tabac pour valider votre Jackpot ! Félicitation vous avez gagné la somme de 2€' ,
       answerChoice: {
         one: {
           text: 'Perdu',
@@ -135,6 +155,87 @@ class ChoiceScenario {
         },
         three: {
           text: 'Perdu',
+          nextFunction: 'scenario1',
+        },
+      },
+    }
+    return res;
+  }
+  scenarioRien = () => {
+    const res = {
+      histoire: 'Absolument rien.' ,
+      answerChoice: {
+        one: {
+          text: 'Rien',
+          nextFunction: 'scenario1', 
+        },
+        two: {
+          text: 'Rien',
+          nextFunction: 'scenario1',
+        },
+        three: {
+          text: 'Pas grand chose... Non j\'ai menti, rien',
+          nextFunction: 'scenario1',
+        },
+      },
+    }
+    return res;
+  }
+  scenarioOrnithorynque = () => {
+    const res = {
+      histoire: 'L\'ornithorynque semble avoir des oeufs avec lui, et s\'apprête à vous les lancer' ,
+      answerChoice: {
+        one: {
+          text: 'Prendre une batte de baseball et faire un homerun',
+          nextFunction: 'bonusStage', 
+        },
+        two: {
+          text: 'Préparer sa défence',
+          nextFunction: 'bonusStage',
+        },
+        three: {
+          text: 'L\'ignorer et partir faire un élevage de furêt de afrique',
+          nextFunction: 'scenarioFuite',
+        },
+      },
+      bonusStage: true
+    }
+    return res;
+  }
+  bonusStage = () => {
+    const res = {
+      histoire: '' ,
+      answerChoice: {
+        one: {
+          text: '',
+          nextFunction: '', 
+        },
+        two: {
+          text: '',
+          nextFunction: '',
+        },
+        three: {
+          text: '',
+          nextFunction: '',
+        },
+      },
+    }
+    return res;
+  }
+  scenarioFuite = () => {
+    const res = {
+      histoire: 'C\'était une excelente idée mais on s\'égare un peu de l\'histoire' ,
+      answerChoice: {
+        one: {
+          text: 'Recommencer, encore une fois',
+          nextFunction: 'scenario1', 
+        },
+        two: {
+          text: 'ALT F4',
+          nextFunction: 'scenario1',
+        },
+        three: {
+          text: 'La réponse 3',
           nextFunction: 'scenario1',
         },
       },
