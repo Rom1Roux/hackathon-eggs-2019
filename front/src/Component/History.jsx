@@ -49,7 +49,13 @@ export default class History extends Component {
       this.deleteEggs();
     }
     return (
-      <div>
+      <div style={{
+        backgroundImage: "url('http://www.mobileswall.com/wp-content/uploads/2015/08/640-Dawn-in-Forest-l.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        height:'640px',
+        overflow: 'hidden'
+      }}>
         <Container>
           <p className='mobilePolicie'>{histoire}</p>
           <Say speak={histoire} />
