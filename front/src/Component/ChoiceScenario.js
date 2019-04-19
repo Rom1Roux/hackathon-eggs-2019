@@ -141,6 +141,7 @@ class ChoiceScenario {
   scenarioPoubelleOeuf = () => {
     const res = {
       histoire: 'Suite à votre découverte, vous décidez d\'enquêter dans les environs, quand soudains...' ,
+      image: poubelleOrnithorynque,
       answerChoice: {
         one: {
           text: 'Vous tombez sur un ticket de loto gagnant !',
@@ -161,6 +162,7 @@ class ChoiceScenario {
   scenarioLoto = () => {
     const res = {
       histoire: 'Vous abandonez Michel et vous foncez vers le premier tabac pour valider votre Jackpot ! Félicitation vous avez gagné la somme de 2€' ,
+      image: lotoGagnant,
       answerChoice: {
         one: {
           text: 'Perdu',
@@ -242,6 +244,7 @@ class ChoiceScenario {
   scenarioFuite = () => {
     const res = {
       histoire: 'C\'était une excelente idée mais on s\'égare un peu de l\'histoire' ,
+      image: elevageFuret,
       answerChoice: {
         one: {
           text: 'Recommencer, encore une fois',
