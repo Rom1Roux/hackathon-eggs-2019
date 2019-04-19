@@ -1,19 +1,19 @@
-import michelDrucker from '../img/Michel-drucker.jpeg';
-import hotesse from '../img/hotesse-de-lair.jpg';
-import crashAvion from '../img/crash-avion.jpg';
-import duelOrnithorynque from '../img/agress-poubelle-ornithorynque.jpg';
-import candyCrushGameOver from '../img/Candy-Crush-Game-Over.jpg';
-import elevageFuret from '../img/elevage-de-furet.jpg';
-import lotoGagnant from '../img/loto-gagnant.jpg';
-import druckerPaille from '../img/Michel-Drucker-paille.jpg';
-import poubelle from '../img/poubelle-fond-blanc.jpg';
-import roadTripAustralia from '../img/road-trip-en-australie-6.jpg';
-import meteoriteOcean from '../img/meteorite-ocean.jpg';
-import hydrofoilBike from '../img/hydrofoil-bike.jpg';
-import ornithorynque from '../img/ornithorynque.gif';
-import herisson from '../img/herisson.jpg';
-import rien from '../img/mordor.jpg';
-import homerSimpson from '../img/homer-simpson.png';
+const michelDrucker = 'https://image.noelshack.com/fichiers/2019/16/5/1555679285-michel-drucker.jpeg';
+const hotesse = 'https://image.noelshack.com/fichiers/2019/16/5/1555679030-hotesse-de-lair.jpg';
+const crashAvion = 'https://image.noelshack.com/fichiers/2019/16/5/1555679032-crash-avion.jpg';
+const duelOrnithorynque = 'https://image.noelshack.com/fichiers/2019/16/5/1555679031-agress-poubelle-ornithorynque.jpg';
+const candyCrushGameOver = 'https://image.noelshack.com/fichiers/2019/16/5/1555679031-candy-crush-game-over.jpg';
+const elevageFuret = 'https://image.noelshack.com/fichiers/2019/16/5/1555679031-elevage-de-furet.jpg';
+const lotoGagnant = 'https://image.noelshack.com/fichiers/2019/16/5/1555679662-loto-gagnant.jpg';
+const druckerPaille = 'https://image.noelshack.com/fichiers/2019/16/5/1555679285-michel-drucker-paille.jpg';
+const poubelle = 'https://image.noelshack.com/fichiers/2019/16/5/1555679285-poubelle-fond-blanc.jpg';
+const roadTripAustralia = 'https://image.noelshack.com/fichiers/2019/16/5/1555679285-road-trip-en-australie-6.jpg';
+const meteoriteOcean = 'https://image.noelshack.com/fichiers/2019/16/5/1555679285-meteorite-ocean.jpg';
+const hydrofoilBike = 'https://image.noelshack.com/fichiers/2019/16/5/1555679031-hydrofoil-bike.jpg';
+const ornithorynque = 'https://leblogdunem.files.wordpress.com/2012/07/pbzy8.gif';
+const herisson = 'https://image.noelshack.com/fichiers/2019/16/5/1555679661-herisson.jpg';
+const rien = 'https://image.noelshack.com/fichiers/2019/16/5/1555679661-mordor.jpg';
+const homerSimpson = 'https://image.noelshack.com/fichiers/2019/16/5/1555679662-homer-simpson.png';
 
 class ChoiceScenario {
   scenario1 = () => {
