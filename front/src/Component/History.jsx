@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { Button, Container } from 'semantic-ui-react';
 import ChoiceScenario from './ChoiceScenario';
 import Say from 'react-say';
+import FinalGame from './FinalGame';
 
 export default class History extends Component {
   constructor(props) {
     super(props);
     this.choice = new ChoiceScenario();
     this.state = {
-      format: this.choice.scenario1()
+      format: this.choice.scenario1(),
+      bonusStage: null,
     }
   }
 
@@ -42,7 +44,7 @@ export default class History extends Component {
   render() {
     const { histoire, answerChoice, image } = this.state.format;
     let oldState = true;
-    if (this.state.format.eggs === true && oldState === true) {
+    if ( this.state.format.eggs === true && oldState === true ) {
       this.getEggs();
       oldState = false;
     } else {
@@ -56,6 +58,7 @@ export default class History extends Component {
         height: '640px',
         overflow: 'hidden'
       }}>
+      {this.state.format.bonusStage === true ? <FinalGame /> : 
         <Container>
           <p className='mobilePolicie'>{histoire}</p>
           <Say speak={histoire} />
@@ -72,6 +75,7 @@ export default class History extends Component {
           </Button.Group>
           <img className='imgHistory'src={image} alt="image correspodante à l'histoire" />
         </Container>
+      }
       </div >
     );
   }
