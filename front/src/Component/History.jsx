@@ -40,7 +40,7 @@ export default class History extends Component {
   }
 
   render() {
-    const { histoire, answerChoice } = this.state.format;
+    const { histoire, answerChoice, image } = this.state.format;
     let oldState = true;
     if (this.state.format.eggs === true && oldState === true) {
       this.getEggs();
@@ -53,7 +53,7 @@ export default class History extends Component {
         backgroundImage: "url('http://www.mobileswall.com/wp-content/uploads/2015/08/640-Dawn-in-Forest-l.jpg')",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
-        height:'640px',
+        height: '640px',
         overflow: 'hidden'
       }}>
         <Container>
@@ -70,6 +70,7 @@ export default class History extends Component {
               <Button onClick={() => this.next('three')} color='red'>{answerChoice.three.text}</Button>
             </div>
           </Button.Group>
+          <img className='imgHistory'src={image} alt="image correspodante à l'histoire" />
         </Container>
       </div >
     );
