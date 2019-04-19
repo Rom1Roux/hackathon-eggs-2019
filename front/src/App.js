@@ -22,9 +22,9 @@ class App extends Component {
           <Start player={this.state.player} heroId={this.state.heroId} /> :
           <SelectHeroes isConnected={this.isConnected} />
         }
-        <footer className='footer'>
+        {/* <div className='footer'>
         <p>Une équipe de Wilder super motivé</p>
-        </footer>
+        </div> */}
       </div>
     );
   }

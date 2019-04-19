@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Icon, Card, Image, Button, Container } from 'semantic-ui-react';
+import Swal from 'sweetalert2';
 
 export default class SelectHeroes extends Component {
 
@@ -41,7 +42,10 @@ export default class SelectHeroes extends Component {
           if (res.callback) {
             this.props.isConnected(pseudo, hero.heroId);
           } else {
-            alert('Le pseudo est déjà utilisé')
+            Swal.fire({
+              title: 'Le pseudo est déjà utilisé',
+              type: 'error'
+           })
           }
         })
     }

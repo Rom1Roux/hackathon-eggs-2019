@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import History from './History';
 import Say from 'react-say';
+import Swal from 'sweetalert2';
 
 export default class Start extends Component {
 
@@ -23,7 +24,7 @@ export default class Start extends Component {
             <p className='mobilePolicie'>Bravo ! vous avez été sélectionné parmis les derniers des loosers... <br />
             Si vous souhaitez remonter dans l'estime de votre entourage, resolvez cette enquête.</p>
             <Button color='red' className='buttonChoice' onClick={this.startHistory}>D'accord</Button>
-            <Button color='red' className='buttonChoice' onClick={() => alert('Tu es encore pire que ce que j\'imaginais')}>Je ne peux pas j'ai piscine</Button>
+            <Button color='red' className='buttonChoice' onClick={() => Swal.fire({title: 'Tu es encore pire que ce que j\'imaginais', type: 'error'})}>Je ne peux pas j'ai piscine</Button>
           </div>
           :
           <History player={this.props.player} heroId={this.props.heroId}/>

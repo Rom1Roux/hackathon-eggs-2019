@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../CSS/imgRotate.css';
+import Swal from 'sweetalert2';
 
 class FinalGame extends Component {
   constructor(props) {
@@ -50,7 +51,9 @@ class FinalGame extends Component {
   render() {
     const { eggs, score } = this.state;
     if(score >= 10){
-      alert('Félicitation, vous avez réussie à résoudre cette enquête, mais vous êtes quand même minable');
+      Swal.fire({
+        title: 'Félicitation, vous avez réussie à résoudre cette enquête, mais vous êtes quand même minable',
+        type: 'success'});
       this.props.restartGame();
     }
     return (

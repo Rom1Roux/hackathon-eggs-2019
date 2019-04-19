@@ -78,7 +78,7 @@ export default class History extends Component {
               <Button onClick={() => this.next('three')} color='red'>{answerChoice.three.text}</Button>
             </div>
           </Button.Group>
-          <img className='imgHistory'src={image} alt="image correspodante à l'histoire" />
+          <img className='imgHistory' src={image} alt="image correspodante à l'histoire" />
         </Container>
       }
       </div >
